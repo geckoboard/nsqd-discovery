@@ -1,0 +1,55 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "4IearLMTAsdyT2kExofJKklO7k4=",
+			"path": "github.com/apex/log",
+			"revision": "ff0f66940b829dc66c81dad34746d4349b83eb9e",
+			"revisionTime": "2018-01-18T05:06:19Z"
+		},
+		{
+			"checksumSHA1": "+urkX0ZY02ty7TvsBsYzcboRxVg=",
+			"path": "github.com/apex/log/handlers/text",
+			"revision": "ff0f66940b829dc66c81dad34746d4349b83eb9e",
+			"revisionTime": "2018-01-18T05:06:19Z"
+		},
+		{
+			"checksumSHA1": "4aWxi2T57DMXyrPlKuCfY4t+dbA=",
+			"path": "github.com/geckoboard/nsqd-discovery",
+			"revision": "07c26ed95b73fef4736c906752f6f915b608ed3c",
+			"revisionTime": "2017-10-19T17:56:58Z"
+		},
+		{
+			"checksumSHA1": "YY6dqQ57WgXiT9/+xbNeYVMrto0=",
+			"path": "github.com/geckoboard/nsqd-discovery/dnscfg",
+			"revision": "07c26ed95b73fef4736c906752f6f915b608ed3c",
+			"revisionTime": "2017-10-19T17:56:58Z"
+		},
+		{
+			"checksumSHA1": "98qwdCvVsYCtim/2JCTv5syY3wk=",
+			"path": "github.com/geckoboard/nsqd-discovery/httpcfg",
+			"revision": "07c26ed95b73fef4736c906752f6f915b608ed3c",
+			"revisionTime": "2017-10-19T17:56:58Z"
+		},
+		{
+			"checksumSHA1": "B6U6F4nJLorlM+kwDT24Yi1AJYM=",
+			"path": "github.com/harlow/nsqd-discovery/dnscfg",
+			"revision": "07c26ed95b73fef4736c906752f6f915b608ed3c",
+			"revisionTime": "2017-10-19T17:56:58Z"
+		},
+		{
+			"checksumSHA1": "iaiT/30MijqWkbDpnRwDfulRerY=",
+			"path": "github.com/harlow/nsqd-discovery/httpcfg",
+			"revision": "07c26ed95b73fef4736c906752f6f915b608ed3c",
+			"revisionTime": "2017-10-19T17:56:58Z"
+		},
+		{
+			"checksumSHA1": "ljd3FhYRJ91cLZz3wsH9BQQ2JbA=",
+			"path": "github.com/pkg/errors",
+			"revision": "816c9085562cd7ee03e7f8188a1cfd942858cded",
+			"revisionTime": "2018-03-11T21:45:15Z"
+		}
+	],
+	"rootPath": "github.com/geckoboard/nsqd-discovery"
+}
