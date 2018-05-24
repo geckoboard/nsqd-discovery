@@ -6,6 +6,7 @@ import (
 	"net/http"
 	_ "net/http/pprof"
 	"os"
+	"os/signal"
 	"time"
 
 	"github.com/apex/log"
@@ -15,10 +16,11 @@ import (
 )
 
 var (
-	ldPort      = flag.Int("lookupd-tcp-port", 4160, "The nsqlookupd TCP port")
-	dnsAddr     = flag.String("lookupd-dns-address", "", "The nsqlookupd DNS entry")
-	cfgAddr     = flag.String("config-http-address", "", "The config address")
-	httpAddrCfg = flag.Bool("config-addresses-as-http", false, "Config nsqlookupd http addresses")
+	ldPort        = flag.Int("lookupd-tcp-port", 4160, "The nsqlookupd TCP port")
+	dnsAddr       = flag.String("lookupd-dns-address", "", "The nsqlookupd DNS entry")
+	cfgAddr       = flag.String("config-http-address", "", "The config address")
+	httpAddrCfg   = flag.Bool("config-addresses-as-http", false, "Config nsqlookupd http addresses")
+	pprofBindAddr = flag.String("pprof-bind-addr", "", "If non-empty, bind pprof handlers to this address (e.g. ':6060')")
 )
 
 func main() {
@@ -64,7 +66,15 @@ func main() {
 
 	go configLoop(ctx, cfgURL)
 
-	http.ListenAndServe(":6060", nil)
+	if *pprofBindAddr != "" {
+		go http.ListenAndServe(*pprofBindAddr, nil)
+	}
+
+	// Run indefinitely until we get an interrupt
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt)
+	<-c
+	os.Exit(0)
 }
 
 // continue looking at dns entry for changes in config
